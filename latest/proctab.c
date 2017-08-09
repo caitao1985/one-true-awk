@@ -84,16 +84,16 @@ static char *printname[93] = {
 	(char *) "STRING",	/* 336 */
 	(char *) "REGEXPR",	/* 337 */
 	(char *) "GETLINE",	/* 338 */
-	(char *) "SUBSTR",	/* 339 */
+	(char *) "RETURN",	/* 339 */
 	(char *) "SPLIT",	/* 340 */
-	(char *) "RETURN",	/* 341 */
+	(char *) "SUBSTR",	/* 341 */
 	(char *) "WHILE",	/* 342 */
 	(char *) "CAT",	/* 343 */
-	(char *) "UMINUS",	/* 344 */
-	(char *) "NOT",	/* 345 */
+	(char *) "NOT",	/* 344 */
+	(char *) "UMINUS",	/* 345 */
 	(char *) "POWER",	/* 346 */
-	(char *) "INCR",	/* 347 */
-	(char *) "DECR",	/* 348 */
+	(char *) "DECR",	/* 347 */
+	(char *) "INCR",	/* 348 */
 	(char *) "INDIRECT",	/* 349 */
 	(char *) "LASTTOKEN",	/* 350 */
 };
@@ -181,16 +181,16 @@ Cell *(*proctab[93])(Node **, int) = {
 	nullproc,	/* STRING */
 	nullproc,	/* REGEXPR */
 	awkgetline,	/* GETLINE */
-	substr,	/* SUBSTR */
-	split,	/* SPLIT */
 	jump,	/* RETURN */
+	split,	/* SPLIT */
+	substr,	/* SUBSTR */
 	whilestat,	/* WHILE */
 	cat,	/* CAT */
-	arith,	/* UMINUS */
 	boolop,	/* NOT */
+	arith,	/* UMINUS */
 	arith,	/* POWER */
-	nullproc,	/* INCR */
 	nullproc,	/* DECR */
+	nullproc,	/* INCR */
 	indirect,	/* INDIRECT */
 	nullproc,	/* LASTTOKEN */
 };

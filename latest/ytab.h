@@ -1,14 +1,13 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
-/* Skeleton interface for Bison's Yacc-like parsers in C
+/* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
-   Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
-   This program is free software; you can redistribute it and/or modify
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,9 +15,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -33,106 +30,115 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Tokens.  */
+#ifndef YY_YY_Y_TAB_H_INCLUDED
+# define YY_YY_Y_TAB_H_INCLUDED
+/* Debug traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+#if YYDEBUG
+extern int yydebug;
+#endif
+
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     FIRSTTOKEN = 258,
-     PROGRAM = 259,
-     PASTAT = 260,
-     PASTAT2 = 261,
-     XBEGIN = 262,
-     XEND = 263,
-     NL = 264,
-     ARRAY = 265,
-     MATCH = 266,
-     NOTMATCH = 267,
-     MATCHOP = 268,
-     FINAL = 269,
-     DOT = 270,
-     ALL = 271,
-     CCL = 272,
-     NCCL = 273,
-     CHAR = 274,
-     OR = 275,
-     STAR = 276,
-     QUEST = 277,
-     PLUS = 278,
-     EMPTYRE = 279,
-     AND = 280,
-     BOR = 281,
-     APPEND = 282,
-     EQ = 283,
-     GE = 284,
-     GT = 285,
-     LE = 286,
-     LT = 287,
-     NE = 288,
-     IN = 289,
-     ARG = 290,
-     BLTIN = 291,
-     BREAK = 292,
-     CLOSE = 293,
-     CONTINUE = 294,
-     DELETE = 295,
-     DO = 296,
-     EXIT = 297,
-     FOR = 298,
-     FUNC = 299,
-     SUB = 300,
-     GSUB = 301,
-     IF = 302,
-     INDEX = 303,
-     LSUBSTR = 304,
-     MATCHFCN = 305,
-     NEXT = 306,
-     NEXTFILE = 307,
-     ADD = 308,
-     MINUS = 309,
-     MULT = 310,
-     DIVIDE = 311,
-     MOD = 312,
-     ASSIGN = 313,
-     ASGNOP = 314,
-     ADDEQ = 315,
-     SUBEQ = 316,
-     MULTEQ = 317,
-     DIVEQ = 318,
-     MODEQ = 319,
-     POWEQ = 320,
-     PRINT = 321,
-     PRINTF = 322,
-     SPRINTF = 323,
-     ELSE = 324,
-     INTEST = 325,
-     CONDEXPR = 326,
-     POSTINCR = 327,
-     PREINCR = 328,
-     POSTDECR = 329,
-     PREDECR = 330,
-     VAR = 331,
-     IVAR = 332,
-     VARNF = 333,
-     CALL = 334,
-     NUMBER = 335,
-     STRING = 336,
-     REGEXPR = 337,
-     GETLINE = 338,
-     SUBSTR = 339,
-     SPLIT = 340,
-     RETURN = 341,
-     WHILE = 342,
-     CAT = 343,
-     UMINUS = 344,
-     NOT = 345,
-     POWER = 346,
-     INCR = 347,
-     DECR = 348,
-     INDIRECT = 349,
-     LASTTOKEN = 350
-   };
+  enum yytokentype
+  {
+    FIRSTTOKEN = 258,
+    PROGRAM = 259,
+    PASTAT = 260,
+    PASTAT2 = 261,
+    XBEGIN = 262,
+    XEND = 263,
+    NL = 264,
+    ARRAY = 265,
+    MATCH = 266,
+    NOTMATCH = 267,
+    MATCHOP = 268,
+    FINAL = 269,
+    DOT = 270,
+    ALL = 271,
+    CCL = 272,
+    NCCL = 273,
+    CHAR = 274,
+    OR = 275,
+    STAR = 276,
+    QUEST = 277,
+    PLUS = 278,
+    EMPTYRE = 279,
+    AND = 280,
+    BOR = 281,
+    APPEND = 282,
+    EQ = 283,
+    GE = 284,
+    GT = 285,
+    LE = 286,
+    LT = 287,
+    NE = 288,
+    IN = 289,
+    ARG = 290,
+    BLTIN = 291,
+    BREAK = 292,
+    CLOSE = 293,
+    CONTINUE = 294,
+    DELETE = 295,
+    DO = 296,
+    EXIT = 297,
+    FOR = 298,
+    FUNC = 299,
+    SUB = 300,
+    GSUB = 301,
+    IF = 302,
+    INDEX = 303,
+    LSUBSTR = 304,
+    MATCHFCN = 305,
+    NEXT = 306,
+    NEXTFILE = 307,
+    ADD = 308,
+    MINUS = 309,
+    MULT = 310,
+    DIVIDE = 311,
+    MOD = 312,
+    ASSIGN = 313,
+    ASGNOP = 314,
+    ADDEQ = 315,
+    SUBEQ = 316,
+    MULTEQ = 317,
+    DIVEQ = 318,
+    MODEQ = 319,
+    POWEQ = 320,
+    PRINT = 321,
+    PRINTF = 322,
+    SPRINTF = 323,
+    ELSE = 324,
+    INTEST = 325,
+    CONDEXPR = 326,
+    POSTINCR = 327,
+    PREINCR = 328,
+    POSTDECR = 329,
+    PREDECR = 330,
+    VAR = 331,
+    IVAR = 332,
+    VARNF = 333,
+    CALL = 334,
+    NUMBER = 335,
+    STRING = 336,
+    REGEXPR = 337,
+    GETLINE = 338,
+    RETURN = 339,
+    SPLIT = 340,
+    SUBSTR = 341,
+    WHILE = 342,
+    CAT = 343,
+    NOT = 344,
+    UMINUS = 345,
+    POWER = 346,
+    DECR = 347,
+    INCR = 348,
+    INDIRECT = 349,
+    LASTTOKEN = 350
+  };
 #endif
 /* Tokens.  */
 #define FIRSTTOKEN 258
@@ -216,38 +222,42 @@
 #define STRING 336
 #define REGEXPR 337
 #define GETLINE 338
-#define SUBSTR 339
+#define RETURN 339
 #define SPLIT 340
-#define RETURN 341
+#define SUBSTR 341
 #define WHILE 342
 #define CAT 343
-#define UMINUS 344
-#define NOT 345
+#define NOT 344
+#define UMINUS 345
 #define POWER 346
-#define INCR 347
-#define DECR 348
+#define DECR 347
+#define INCR 348
 #define INDIRECT 349
 #define LASTTOKEN 350
 
-
-
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
-#line 41 "awkgram.y"
+
+union YYSTYPE
 {
+#line 41 "awkgram.y" /* yacc.c:1915  */
+
 	Node	*p;
 	Cell	*cp;
 	int	i;
 	char	*s;
-}
-/* Line 1529 of yacc.c.  */
-#line 246 "y.tab.h"
-	YYSTYPE;
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
-# define YYSTYPE_IS_DECLARED 1
+
+#line 251 "y.tab.h" /* yacc.c:1915  */
+};
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
+# define YYSTYPE_IS_DECLARED 1
 #endif
+
 
 extern YYSTYPE yylval;
 
+int yyparse (void);
+
+#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
