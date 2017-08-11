@@ -112,7 +112,7 @@ int adjbuf(char **pbuf, int *psiz, int minlen, int quantum, char **pbptr,
 		if (rminlen)
 			minlen += quantum - rminlen;
 		tbuf = (char *) realloc(*pbuf, minlen);
-		dprintf( ("adjbuf %s: %d %d (pbuf=%p, tbuf=%p)\n", whatrtn, *psiz, minlen, *pbuf, tbuf) );
+		dprintf( ("adjbuf %s: %d %d (pbuf=%p, tbuf=%p)\n", whatrtn, *psiz, minlen, (void*)(*pbuf), (void*)(tbuf)) );
 		if (tbuf == NULL) {
 			if (whatrtn)
 				FATAL("out of memory in %s", whatrtn);
@@ -1600,8 +1600,8 @@ Cell *printstat(Node **a, int n)	/* print a[0] */
 
 Cell *nullproc(Node **a, int n)
 {
-	n = n;
-	a = a;
+	//n = n;
+	//a = a;
 	return 0;
 }
 
@@ -1715,7 +1715,7 @@ Cell *closefile(Node **a, int n)
 	Cell *x;
 	int i, stat;
 
-	n = n;
+	//n = n;
 	x = execute(a[0]);
 	getsval(x);
 	stat = -1;

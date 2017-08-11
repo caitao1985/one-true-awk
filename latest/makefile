@@ -22,14 +22,14 @@
 # THIS SOFTWARE.
 # ****************************************************************/
 
-CFLAGS = -g
 CFLAGS = -O2
-CFLAGS =
+CFLAGS = -g
 
 CC = gcc -Wall -g -Wwrite-strings
 CC = gcc -fprofile-arcs -ftest-coverage # then gcov f1.c; cat f1.c.gcov
 CC = gcc -g -Wall -pedantic 
 CC = gcc -O4 -Wall -pedantic -fno-strict-aliasing
+CC = gcc -O3 -Wall -pedantic -fno-strict-aliasing
 
 YACC = bison -d -y
 YACC = /usr/local/bin/bison -d -y

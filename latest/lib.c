@@ -160,6 +160,7 @@ int getrec(char **pbuf, int *pbufsize, int isrecord)	/* get next input record */
 			}
 			setfval(nrloc, nrloc->fval+1);
 			setfval(fnrloc, fnrloc->fval+1);
+            setfval(ncloc, (Awkfloat)(strlen(buf)));
 			*pbuf = buf;
 			*pbufsize = bufsize;
 			return 1;
@@ -251,7 +252,7 @@ void setclvar(char *s)	/* set var=value from s */
 	*p++ = 0;
 	p = qstring(p, '\0');
 	q = setsymtab(s, p, 0.0, STR, symtab);
-	setsval(q, p);
+	setsval(q, p);// need to set as setsymtab will return cell if found already in systab.
 	if (is_number(q->sval)) {
 		q->fval = atof(q->sval);
 		q->tval |= NUM;

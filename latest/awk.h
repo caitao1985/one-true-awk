@@ -97,6 +97,7 @@ extern Array	*symtab;
 extern Cell	*nrloc;		/* NR */
 extern Cell	*fnrloc;	/* FNR */
 extern Cell	*nfloc;		/* NF */
+extern Cell	*ncloc;		/* NC */
 extern Cell	*rstartloc;	/* RSTART */
 extern Cell	*rlengthloc;	/* RLENGTH */
 

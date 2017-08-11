@@ -54,6 +54,7 @@ Awkfloat *RLENGTH;	/* length of same */
 Cell	*fsloc;		/* FS */
 Cell	*nrloc;		/* NR */
 Cell	*nfloc;		/* NF */
+Cell	*ncloc;	    /* NC */
 Cell	*fnrloc;	/* FNR */
 Array	*ARGVtab;	/* symbol table containing ARGV[...] */
 Array	*ENVtab;	/* symbol table containing ENVIRON[...] */
@@ -88,6 +89,8 @@ void syminit(void)	/* initialize symbol table with builtin vars */
 	NR = &nrloc->fval;
 	fnrloc = setsymtab("FNR", "", 0.0, NUM, symtab);
 	FNR = &fnrloc->fval;
+    ncloc = setsymtab("NC", "", 0.0, NUM, symtab);
+    /* TODO. NC = looks like not really necessary */
 	SUBSEP = &setsymtab("SUBSEP", "\034", 0.0, STR|DONTFREE, symtab)->sval;
 	rstartloc = setsymtab("RSTART", "", 0.0, NUM, symtab);
 	RSTART = &rstartloc->fval;
@@ -328,7 +331,7 @@ char *setsval(Cell *vp, const char *s)	/* set string val of a Cell */
 		fldno = atoi(vp->nval);
 		if (fldno > *NF)
 			newfld(fldno);
-		   dprintf( ("setting field %d to %s (%p)\n", fldno, s, s) );
+		   dprintf( ("setting field %d to %s (%p)\n", fldno, s, (void*)(s)) );
 	} else if (isrec(vp)) {
 		donefld = 0;	/* mark $1... invalid */
 		donerec = 1;
@@ -340,7 +343,7 @@ char *setsval(Cell *vp, const char *s)	/* set string val of a Cell */
 	vp->tval |= STR;
 	vp->tval &= ~DONTFREE;
 	   dprintf( ("setsval %p: %s = \"%s (%p) \", t=%o r,f=%d,%d\n", 
-		(void*)vp, NN(vp->nval), t,t, vp->tval, donerec, donefld) );
+		(void*)vp, NN(vp->nval), t,(void*)(t), vp->tval, donerec, donefld) );
 	return(vp->sval = t);
 }
 
@@ -385,7 +388,7 @@ static char *get_str_val(Cell *vp, char **fmt)        /* get string val of a Cel
 		vp->tval |= STR;
 	}
 	   dprintf( ("getsval %p: %s = \"%s (%p)\", t=%o\n",
-		(void*)vp, NN(vp->nval), vp->sval, vp->sval, vp->tval) );
+		(void*)vp, NN(vp->nval), vp->sval, (void*)(vp->sval), vp->tval) );
 	return(vp->sval);
 }
 
